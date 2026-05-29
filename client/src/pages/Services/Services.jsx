@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { FiSearch, FiFilter, FiX, FiClock, FiDollarSign } from 'react-icons/fi';
+import { API_URL } from '../../config';
 import styles from './Services.module.css';
 
 const Services = () => {
@@ -170,7 +171,7 @@ const Services = () => {
             <div key={service.id} className={styles.service_card}>
               {service.photo && (
                 <div className={styles.image_wrapper}>
-                  <img src={`http://localhost:5000/uploads/${service.photo}`} alt={service.name} />
+                  <img src={`${API_URL}/uploads/${service.photo}`} alt={service.name} />
                 </div>
               )}
               <div className={styles.service_content}>
