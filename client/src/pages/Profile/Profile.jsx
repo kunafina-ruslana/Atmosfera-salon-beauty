@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, memo } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../../config';
 import {
   FiUser,
   FiHeart,
@@ -53,7 +54,7 @@ const FavoriteCard = memo(({ favorite, onRemove }) => {
       {service?.photo && (
         <div className={styles.image_wrapper}>
           <img
-            src={`http://localhost:5000/uploads/${service.photo}`}
+            src={`${API_URL}/uploads/${service.photo}`}
             alt={service.name}
           />
         </div>
