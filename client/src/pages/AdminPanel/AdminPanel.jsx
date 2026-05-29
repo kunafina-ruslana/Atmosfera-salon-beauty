@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FiCalendar, FiUser, FiClock, FiBriefcase, FiCheckCircle, FiXCircle, FiEye, FiEdit2, FiSave, FiPlus, FiTrash2, FiSun, FiMoon, FiCoffee, FiEyeOff } from 'react-icons/fi';
-import styles from './AdminSchedule.module.css';
+import styles from "./AdminPanel.module.css";
 
 const RequestsList = ({ onRefresh }) => {
   const [scheduleRequests, setScheduleRequests] = useState([]);
