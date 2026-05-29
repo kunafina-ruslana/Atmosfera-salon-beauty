@@ -5,6 +5,7 @@ import {
   FiCamera, FiUser, FiPhoneCall, FiNavigation, FiAward, FiUsers, FiStar 
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../../config';
 import styles from './About.module.css';
 import { useTheme } from '../../contexts/ThemeContext';
 
