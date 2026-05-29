@@ -7,8 +7,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "build": "npm install",
-    "seed": "node seed.js"
+    "build": "npm install"
   },
   "engines": {
     "node": "18.x",
