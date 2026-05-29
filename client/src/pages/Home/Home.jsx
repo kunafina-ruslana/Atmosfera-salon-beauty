@@ -250,7 +250,7 @@ const Home = () => {
                     <div className={styles.category_card} onClick={() => handleCategoryClick(category.id)}>
                       <div className={styles.category_image}>
                         {category.photo ? (
-                          <img src={`http://localhost:5000/uploads/${category.photo}`} alt={category.name} />
+                          <img src={`${API_URL}/uploads/${category.photo}`} alt={category.name} />
                         ) : (
                           <div className={styles.category_image_placeholder}><FiScissors /></div>
                         )}
