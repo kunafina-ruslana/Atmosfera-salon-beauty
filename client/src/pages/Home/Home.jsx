@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../../contexts/AuthContext';
+import { API_URL } from '../../config';
 import {
   FiScissors, FiArrowRight, FiUser, FiMail, FiMessageSquare,
   FiCheckCircle, FiAlertCircle, FiChevronLeft, FiChevronRight,
@@ -312,7 +313,7 @@ const Home = () => {
                 {worksPhotos.map((photo, index) => (
                   <div key={index} className={styles.work_card} onClick={() => setSelectedPhoto(photo)}>
                     <div className={styles.work_image}>
-                      <img src={`http://localhost:5000/uploads/works/${photo.imageUrl}`} alt={photo.description || 'Работа мастера'} />
+                      <img src={`${API_URL}/uploads/works/${photo.imageUrl}`} alt={photo.description || 'Работа мастера'} />
                     </div>
                     <div className={styles.work_content}>
                       <p className={styles.work_master}><FiUser /> Мастер: {photo.masterName}</p>
@@ -350,7 +351,6 @@ const Home = () => {
 
       {promotions.length > 0 ? (
         <div className={`${styles.section} container`}>
-
           <h2 className={styles.section_title}>Акции и спецпредложения</h2>
 
           {promotions.length > 0 && (
@@ -370,7 +370,7 @@ const Home = () => {
                       <div className={styles.promotion_card}>
                         {promo.imageUrl && (
                           <div className={styles.promotion_image}>
-                            <img src={`http://localhost:5000/uploads/promotions/${promo.imageUrl}`} alt={promo.title} />
+                            <img src={`${API_URL}/uploads/promotions/${promo.imageUrl}`} alt={promo.title} />
                           </div>
                         )}
                         <div className={styles.promotion_content}>
@@ -415,8 +415,7 @@ const Home = () => {
         </div>
       ) : (
         <div className={`${styles.section} container`}>
-
-          <h2 className={styles.section_title}> Акции и спецпредложения</h2>
+          <h2 className={styles.section_title}>Акции и спецпредложения</h2>
           <div className={styles.no_promotions}>
             <h3>На данный момент нет активных акций</h3>
             <p>Следите за обновлениями, скоро появятся новые спецпредложения!</p>
@@ -426,7 +425,7 @@ const Home = () => {
 
       <div className={`${styles.section} ${styles.section_gray}`}>
         <div className='container'>
-          <h2 className={styles.section_title}> Отзывы клиентов</h2>
+          <h2 className={styles.section_title}>Отзывы клиентов</h2>
 
           {reviews.length > 0 && (
             <div className={styles.slider_container}>
@@ -456,8 +455,6 @@ const Home = () => {
               </button>
             </div>
           )}
-
-
         </div>
       </div>
 
@@ -505,7 +502,7 @@ const Home = () => {
         <div className={styles.photo_modal} onClick={() => setSelectedPhoto(null)}>
           <div className={styles.photo_modal_content} onClick={(e) => e.stopPropagation()}>
             <button className={styles.photo_modal_close} onClick={() => setSelectedPhoto(null)}><FiX /></button>
-            <img src={`http://localhost:5000/uploads/works/${selectedPhoto.imageUrl}`} alt={selectedPhoto.description} />
+            <img src={`${API_URL}/uploads/works/${selectedPhoto.imageUrl}`} alt={selectedPhoto.description} />
             <div className={styles.photo_modal_info}>
               <p><FiUser /> Мастер: {selectedPhoto.masterName}</p>
               <p>{selectedPhoto.description}</p>
