@@ -86,7 +86,7 @@ const About = () => {
                 <div className={styles.masterImage}>
                   {master.photo ? (
                     <img 
-                      src={`http://localhost:5000/uploads/${master.photo}`} 
+                      src={`${API_URL}/uploads/${master.photo}`}
                       alt={master.User.firstName}
                     />
                   ) : (
