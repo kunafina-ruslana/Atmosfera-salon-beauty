@@ -7,11 +7,11 @@ server: {
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://atmosfera-salon-beauty-api.onrender.com',
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'http://localhost:5000',
+        target: 'https://atmosfera-salon-beauty-api.onrender.com',
         changeOrigin: true,
       },
     },
